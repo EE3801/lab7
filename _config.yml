@@ -1,26 +1,7 @@
 title: Lab 7
 remote_theme: just-the-docs/just-the-docs
 
-aux_links:
-  Introduction:
-    - index.md
-  Instructions:
-    - lab7%20manual_data_pipeline.md
-  - title: 1. Scenario
-    url: lab7%20manual_data_pipeline.md#1-scenario
-  - title: 2. Prepare Python Environment
-    url: lab7%20manual_data_pipeline.md#2-prepare-python-environment
-  - title: 3. Generate data
-    url: lab7%20manual_data_pipeline.md#3-generate-data
-  - title: 4. Python Visualisation
-    url: lab7%20manual_data_pipeline.md#4-python-visualisation
-  - title: 5. Microsoft Excel (Pivot Tables)
-    url: lab7%20manual_data_pipeline.md#5-microsoft-excel-pivot-tables
-  - title: 6. Microsoft Power BI
-    url: lab7%20manual_data_pipeline.md#6-microsoft-power-bi
-  - title: Conclusion
-    url: lab7%20manual_data_pipeline.md#conclusion
-
 just_the_docs:
   custom_css:
     - assets/css/style.scss
+  custom_nav: custom_nav.html
