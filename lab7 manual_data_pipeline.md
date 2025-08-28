@@ -28,35 +28,35 @@ We start this practical exercises with a common starting point, reading in data 
 3. Select Kernel - Python Environment "venv_ee3801".
 
 
-```python
-# install python library
-
-!python -m pip install faker
-!python -m pip install pandas
-!python -m pip install matplotlib
-!python -m pip install --upgrade pip
-```
-
-When prompted "Running cells with 'venv_ee3801 (Python 3.x.x)' requires the ipykernel package.", click Install.
-
-
-```python
-# import libraries
-
-from faker import Faker
-import json
-from datetime import datetime, timedelta
-import random
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# set the date format
-date_format = "%d/%m/%Y %H:%M:%S"
-
-import os
-home_directory = os.path.expanduser("~")
-os.chdir(home_directory+'/Documents/projects/ee3801')
-```
+    ```python
+    # install python library
+    
+    !python -m pip install faker
+    !python -m pip install pandas
+    !python -m pip install matplotlib
+    !python -m pip install --upgrade pip
+    ```
+    
+    When prompted "Running cells with 'venv_ee3801 (Python 3.x.x)' requires the ipykernel package.", click Install.
+    
+    
+    ```python
+    # import libraries
+    
+    from faker import Faker
+    import json
+    from datetime import datetime, timedelta
+    import random
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    
+    # set the date format
+    date_format = "%d/%m/%Y %H:%M:%S"
+    
+    import os
+    home_directory = os.path.expanduser("~")
+    os.chdir(home_directory+'/Documents/projects/ee3801')
+    ```
 
 # 3. Generate data
 
@@ -163,67 +163,67 @@ os.chdir(home_directory+'/Documents/projects/ee3801')
 1. In your notebook, plot the data to show the total number of cars in each location.
 
 
-```python
-carpark_system_df.groupby(['LocationID'])['LocationID'].count().plot(title="Total number of cars in each location")
-index_carpark_system_df = carpark_system_df.set_index('Entry_DateTime')
-index_carpark_system_df.index = pd.to_datetime(index_carpark_system_df.index, errors='coerce')
-
-```
+    ```python
+    carpark_system_df.groupby(['LocationID'])['LocationID'].count().plot(title="Total number of cars in each location")
+    index_carpark_system_df = carpark_system_df.set_index('Entry_DateTime')
+    index_carpark_system_df.index = pd.to_datetime(index_carpark_system_df.index, errors='coerce')
+    
+    ```
 
 2. Plot a chart to show which time of the day has more cars entering the carpark.
 
 
-```python
-df = pd.DataFrame({'hour':index_carpark_system_df.index.hour, 
-    'plate': index_carpark_system_df['Plate']})\
-    .groupby('hour')['plate'].count()
-
-ax = df.plot(title="Total number of cars in each hour of the day")
-
-# show data labels
-for i, txt in enumerate(df):
-    ax.annotate(txt, (df.index[i], df.values[i]), textcoords="offset points", xytext=(0,5), ha='center')
-plt.show()
-
-```
+    ```python
+    df = pd.DataFrame({'hour':index_carpark_system_df.index.hour, 
+        'plate': index_carpark_system_df['Plate']})\
+        .groupby('hour')['plate'].count()
+    
+    ax = df.plot(title="Total number of cars in each hour of the day")
+    
+    # show data labels
+    for i, txt in enumerate(df):
+        ax.annotate(txt, (df.index[i], df.values[i]), textcoords="offset points", xytext=(0,5), ha='center')
+    plt.show()
+    
+    ```
 
 3. Plot a chart to show how many cars is in each carpark at every hour. Is the carparks overcrowded?
 
 
-```python
-pd.DataFrame({'hour':index_carpark_system_df.index.hour, 
-    'plate': index_carpark_system_df['Plate'], 
-    'carpark': index_carpark_system_df['LocationID']})\
-    .groupby(['hour','carpark'])['plate'].count()
-```
-
-
-```python
-df = pd.DataFrame({'hour':index_carpark_system_df.index.hour, 
-    'plate': index_carpark_system_df['Plate'], 
-    'carpark': index_carpark_system_df['LocationID']})\
-    .groupby(['hour','carpark'])['plate'].count()
-df.unstack().plot(title="Number of cars in the car park in each hour of the day")
-```
+    ```python
+    pd.DataFrame({'hour':index_carpark_system_df.index.hour, 
+        'plate': index_carpark_system_df['Plate'], 
+        'carpark': index_carpark_system_df['LocationID']})\
+        .groupby(['hour','carpark'])['plate'].count()
+    ```
+    
+    
+    ```python
+    df = pd.DataFrame({'hour':index_carpark_system_df.index.hour, 
+        'plate': index_carpark_system_df['Plate'], 
+        'carpark': index_carpark_system_df['LocationID']})\
+        .groupby(['hour','carpark'])['plate'].count()
+    df.unstack().plot(title="Number of cars in the car park in each hour of the day")
+    ```
 
 # 5. Microsoft Excel (Pivot Tables)
 
 1. Open the carpark_system.csv file in Microsoft Excel.
 
-<img src="image/week7_image1.png" width="50%">
+    <img src="image/week7_image1.png" width="50%">
 
 2. Click on Insert > Pivot Chart > Ok
 
-<img src="image/week7_image2.png" width="50%">
-<img src="image/week7_image3.png" width="50%">
+    <img src="image/week7_image2.png" width="50%">
+    <img src="image/week7_image3.png" width="50%">
 
 3. A new worksheet will be opened.
 
-<img src="image/week7_image4.png" width="50%">
+    <img src="image/week7_image4.png" width="50%">
 
 4. Drag and drop the field name Entry_DateTime into Rows, Plate into Values, LocationID into Columns. Note: If the date does not show Month or Day groupings, go to your system date settings and set to English (Singapore).
 
-<img src="image/week7_image5.png" width="50%">
+    <img src="image/week7_image5.png" width="50%">
 
 # 6. Microsoft Power BI
 
@@ -258,108 +258,108 @@ The amount of data might increase as the days goes by, we want to quickly visual
 
 2. Right click on the triple dots (...) and copy the link.
 
-<img src="image/week7_image6.png" width="50%">
+    <img src="image/week7_image6.png" width="50%">
 
 3. Open MS Power BI Desktop.
 
-<img src="image/week7_image7.png" width="50%">
+    <img src="image/week7_image7.png" width="50%">
 
 4. Select New > Report.
 
-<img src="image/week7_image8.png" width="50%">
-<img src="image/week7_image9.png" width="50%">
+    <img src="image/week7_image8.png" width="50%">
+    <img src="image/week7_image9.png" width="50%">
 
 5. Select Get Data > Web. Paste the link that you have copied in step 2. Remove the question mark (?), parameters and values at the end of the link. Click Ok and Load.
 
-<img src="image/week7_image10.png" width="50%">
-<img src="image/week7_image11.png" width="50%">
-<img src="image/week7_image12.png" width="50%">
+    <img src="image/week7_image10.png" width="50%">
+    <img src="image/week7_image11.png" width="50%">
+    <img src="image/week7_image12.png" width="50%">
 
 6. Select Transform Data.
 
-<img src="image/week7_image13.png" width="50%">
+    <img src="image/week7_image13.png" width="50%">
 
 7. Change the Data Type of Entry_DateTime and Exit_DateTime to Locale > DateTime > Locale > English (Singapore).
 
-<img src="image/week7_image14.png" width="30%">
-<img src="image/week7_image15.png" width="50%"> <br>
-<img src="image/week7_image16.png" width="20%">
+    <img src="image/week7_image14.png" width="30%">
+    <img src="image/week7_image15.png" width="50%"> <br>
+    <img src="image/week7_image16.png" width="20%">
 
 8. Save your MS Power BI file as carpark_system.pbix. Click on Apply. Click on Close and Apply.
 
-<img src="image/week7_image17.png" width="20%">
+    <img src="image/week7_image17.png" width="20%">
 
 9. Drag and drop the Line chart into the workspace. Drag and drop Entry_DateTime into X-axis, Plate into Y-axis, LocationID into Legend.
 
-<img src="image/week7_image18.png" width="20%">
+    <img src="image/week7_image18.png" width="20%">
 
 10. You can see the chart. Click on the arrow down (V) beside X-axis Entry_DateTime > Choose Date Hierarchy. Remove Year and Qtr.
 
-<img src="image/week7_image19.png" width="50%"> <br>
-<img src="image/week7_image20.png" width="20%">
-<img src="image/week7_image21.png" width="20%">
-<img src="image/week7_image22.png" width="20%">
+    <img src="image/week7_image19.png" width="50%"> <br>
+    <img src="image/week7_image20.png" width="20%">
+    <img src="image/week7_image21.png" width="20%">
+    <img src="image/week7_image22.png" width="20%">
 
 11. New data is coming in... Use the codes below to generate new car entry for every hour from 9 am to 8 pm for every minute and second.
 
 
 
 
-```python
-def createNewCarEntry():
-    car = CarPark(
-        Plate= fake.license_plate(),
-        LocationID="Park"+str(random.randint(0, 5)),
-        Entry_DateTime=generate_past_datetime(1).strftime(date_format), # Approximately 1 day ago
-        Exit_DateTime="",
-        Parking_Charges=float(0)
-    )
-
-    return json.dumps(car.__dict__)
-```
+    ```python
+    def createNewCarEntry():
+        car = CarPark(
+            Plate= fake.license_plate(),
+            LocationID="Park"+str(random.randint(0, 5)),
+            Entry_DateTime=generate_past_datetime(1).strftime(date_format), # Approximately 1 day ago
+            Exit_DateTime="",
+            Parking_Charges=float(0)
+        )
+    
+        return json.dumps(car.__dict__)
+    ```
 
 12. Generate 100 cars.
 
 
-```python
-# read latest file
-carpark_system_df = pd.read_csv("data/carpark_system.csv", encoding='utf-8-sig', index_col=False)
-# carpark_system_df.drop(columns=['Unnamed: 0'], inplace=True)
-print(len(carpark_system_df))
-carpark_system_df.head()
-
-# Generate more cars, append to list and save csv
-carpark_system = []
-for i in range(100):
-    thiscar_dict = eval(createNewCarEntry())
-    carpark_system.append(list(thiscar_dict.values()))
-
-new_carpark_system_df = pd.DataFrame(carpark_system, columns=list(eval(createNewCarEntry()).keys()))
-print(len(new_carpark_system_df))
-print(new_carpark_system_df.head())
-
-updated_carpark_system_df = pd.concat([carpark_system_df,new_carpark_system_df], axis=0)
-print(len(updated_carpark_system_df))
-updated_carpark_system_df.head()
-
-# export to csv for further analysis
-updated_carpark_system_df.to_csv("data/carpark_system.csv", encoding='utf-8-sig')
-# export to your OneDrive too for on-demand refresh (replace your file in OneDrive)
-updated_carpark_system_df.to_csv("~/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/ee3801/data/carpark_system.csv", encoding='utf-8-sig')
+    ```python
+    # read latest file
+    carpark_system_df = pd.read_csv("data/carpark_system.csv", encoding='utf-8-sig', index_col=False)
+    # carpark_system_df.drop(columns=['Unnamed: 0'], inplace=True)
+    print(len(carpark_system_df))
+    carpark_system_df.head()
     
-```
+    # Generate more cars, append to list and save csv
+    carpark_system = []
+    for i in range(100):
+        thiscar_dict = eval(createNewCarEntry())
+        carpark_system.append(list(thiscar_dict.values()))
+    
+    new_carpark_system_df = pd.DataFrame(carpark_system, columns=list(eval(createNewCarEntry()).keys()))
+    print(len(new_carpark_system_df))
+    print(new_carpark_system_df.head())
+    
+    updated_carpark_system_df = pd.concat([carpark_system_df,new_carpark_system_df], axis=0)
+    print(len(updated_carpark_system_df))
+    updated_carpark_system_df.head()
+    
+    # export to csv for further analysis
+    updated_carpark_system_df.to_csv("data/carpark_system.csv", encoding='utf-8-sig')
+    # export to your OneDrive too for on-demand refresh (replace your file in OneDrive)
+    updated_carpark_system_df.to_csv("~/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/ee3801/data/carpark_system.csv", encoding='utf-8-sig')
+        
+    ```
 
 13. The codes above should replace the carpark_system.csv in OneDrive. However if it failed you can still manually copy and replace your generated carpark_system.csv file into OneDrive.
 
-<img src="image/week7_image23.png" width="50%">
+    <img src="image/week7_image23.png" width="50%">
 
 14. In MS Power BI, click on the refresh button. 
 
-<img src="image/week7_image24.png" width="50%">
+    <img src="image/week7_image24.png" width="50%">
 
 15. Drag and drop the Card into the workspace and count the number of Plates.
 
-<img src="image/week7_image26.png" width="50%">
+    <img src="image/week7_image26.png" width="50%">
 
 <!-- ## Microsoft Power Automate
 
