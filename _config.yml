@@ -1,7 +1,10 @@
 title: Lab 7
 remote_theme: just-the-docs/just-the-docs
 
+aux_links:
+  "Introduction":
+    - "https://ee3801.github.io/lab7/lab7%20manual_data_pipeline.html"
+
 just_the_docs:
   custom_css:
     - assets/css/style.scss
-  custom_nav: custom_nav.html
