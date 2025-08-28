@@ -2,10 +2,10 @@ title: Lab 7
 remote_theme: just-the-docs/just-the-docs
 
 aux_links:
-  - title: Introduction
-    url: index.md
-  - title: Instructions
-    url: lab7%20manual_data_pipeline.md
+  Introduction:
+    - index.md
+  Instructions:
+    - lab7%20manual_data_pipeline.md
   - title: 1. Scenario
     url: lab7%20manual_data_pipeline.md#1-scenario
   - title: 2. Prepare Python Environment
