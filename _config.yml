@@ -1,7 +1,7 @@
 title: Lab 7
 remote_theme: just-the-docs/just-the-docs
 
-nav_external_links:
+aux_links:
   - title: Introduction
     url: index.md
   - title: Instructions
