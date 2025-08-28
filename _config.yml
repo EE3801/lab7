@@ -3,7 +3,11 @@ remote_theme: just-the-docs/just-the-docs
 
 aux_links:
   "Introduction":
+    - "https://ee3801.github.io/lab7/"
+  "Instruction":
     - "https://ee3801.github.io/lab7/lab7%20manual_data_pipeline.html"
+  "1. Scenario":
+    - "https://ee3801.github.io/lab7/lab7%20manual_data_pipeline.html#1-scenario"
 
 just_the_docs:
   custom_css:
