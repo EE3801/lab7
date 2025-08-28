@@ -20,3 +20,4 @@ nav_external_links:
 just_the_docs:
   custom_css:
     - assets/css/style.scss
+    - assets/js/fix-links.js
