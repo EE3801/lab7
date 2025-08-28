@@ -63,100 +63,100 @@ os.chdir(home_directory+'/Documents/projects/ee3801')
 1. Copy and paste these codes into your notebook and run.
 
 
-```python
-# faker is a python library that generates fake data
-# here we want to generate fake data to simulate cars entering into the carpark
-fake=Faker()
-fake.license_plate()
-```
+    ```python
+    # faker is a python library that generates fake data
+    # here we want to generate fake data to simulate cars entering into the carpark
+    fake=Faker()
+    fake.license_plate()
+    ```
 
 2. Define the CarPark class and declare function that generate cars entering the carpark for the past 3 months between 9 am to 8 pm for every minute and second.
 
 
-```python
-# define the CarPark class
-class CarPark:
-    def __init__(self, Plate, LocationID, Entry_DateTime, Exit_DateTime, Parking_Charges):
-        self.Plate = Plate
-        self.LocationID = LocationID
-        self.Entry_DateTime = Entry_DateTime
-        self.Exit_DateTime = Exit_DateTime
-        self.Parking_Charges = Parking_Charges
-
-def generate_past_datetime(days):
-    """
-    Generates a list of random datetime objects within the last 2-3 months,
-    between 9 AM and 8 PM, including minute and second precision.
-
-    Returns:
-        datetime object.
-    """
-    # generated_dates = []
-    now = datetime.now()
-
-    # Define the time range for the past n months
-    end_date = now
-    start_date = now - timedelta(days=days) 
-
-    time_delta_total_seconds = int((end_date - start_date).total_seconds())
-
-    # Generate a random number of seconds within the 2-3 month range
-    random_seconds_past = random.randint(0, time_delta_total_seconds)
-    random_date_base = start_date + timedelta(seconds=random_seconds_past)
-
-    # Generate random time components between 9 AM and 8 PM
-    random_hour = random.randint(9, 20)  # 9 to 20 (inclusive for 8 PM)
-    random_minute = random.randint(0, 59)
-    random_second = random.randint(0, 59)
-
-    # Combine date and time components
-    generated_datetime = random_date_base.replace(
-        hour=random_hour,
-        minute=random_minute,
-        second=random_second,
-        microsecond=0  # Set microseconds to 0 for minute/second precision
-    )
-
-    return generated_datetime
-
-# generate cars entering the carpark for the past 2-3 months between 9 am to 8 pm for every minute and second
-def createPastCarEntry():
-    car = CarPark(
-        Plate= fake.license_plate(),
-        LocationID="Park"+str(random.randint(0, 5)),
-        Entry_DateTime=generate_past_datetime(90).strftime(date_format), # Approximately 3 months ago
-        Exit_DateTime="",
-        Parking_Charges=float(0)
-    )
-
-    # return a json format
-    return json.dumps(car.__dict__) 
-```
+    ```python
+    # define the CarPark class
+    class CarPark:
+        def __init__(self, Plate, LocationID, Entry_DateTime, Exit_DateTime, Parking_Charges):
+            self.Plate = Plate
+            self.LocationID = LocationID
+            self.Entry_DateTime = Entry_DateTime
+            self.Exit_DateTime = Exit_DateTime
+            self.Parking_Charges = Parking_Charges
+    
+    def generate_past_datetime(days):
+        """
+        Generates a list of random datetime objects within the last 2-3 months,
+        between 9 AM and 8 PM, including minute and second precision.
+    
+        Returns:
+            datetime object.
+        """
+        # generated_dates = []
+        now = datetime.now()
+    
+        # Define the time range for the past n months
+        end_date = now
+        start_date = now - timedelta(days=days) 
+    
+        time_delta_total_seconds = int((end_date - start_date).total_seconds())
+    
+        # Generate a random number of seconds within the 2-3 month range
+        random_seconds_past = random.randint(0, time_delta_total_seconds)
+        random_date_base = start_date + timedelta(seconds=random_seconds_past)
+    
+        # Generate random time components between 9 AM and 8 PM
+        random_hour = random.randint(9, 20)  # 9 to 20 (inclusive for 8 PM)
+        random_minute = random.randint(0, 59)
+        random_second = random.randint(0, 59)
+    
+        # Combine date and time components
+        generated_datetime = random_date_base.replace(
+            hour=random_hour,
+            minute=random_minute,
+            second=random_second,
+            microsecond=0  # Set microseconds to 0 for minute/second precision
+        )
+    
+        return generated_datetime
+    
+    # generate cars entering the carpark for the past 2-3 months between 9 am to 8 pm for every minute and second
+    def createPastCarEntry():
+        car = CarPark(
+            Plate= fake.license_plate(),
+            LocationID="Park"+str(random.randint(0, 5)),
+            Entry_DateTime=generate_past_datetime(90).strftime(date_format), # Approximately 3 months ago
+            Exit_DateTime="",
+            Parking_Charges=float(0)
+        )
+    
+        # return a json format
+        return json.dumps(car.__dict__) 
+    ```
 
 3. Generate 1000 cars.
 
 
-```python
-# Generate 1000 cars
-carpark_system = []
-for i in range(1000):
-    thiscar_dict = eval(createPastCarEntry())
-    carpark_system.append(list(thiscar_dict.values()))
-
-carpark_system_df = pd.DataFrame(carpark_system, columns=list(eval(createPastCarEntry()).keys()))
-print(len(carpark_system_df))
-carpark_system_df.head()
+    ```python
+    # Generate 1000 cars
+    carpark_system = []
+    for i in range(1000):
+        thiscar_dict = eval(createPastCarEntry())
+        carpark_system.append(list(thiscar_dict.values()))
     
-```
+    carpark_system_df = pd.DataFrame(carpark_system, columns=list(eval(createPastCarEntry()).keys()))
+    print(len(carpark_system_df))
+    carpark_system_df.head()
+        
+    ```
 
 4. Save to csv file for analysis.
 
 
-```python
-# export to csv for further analysis
-carpark_system_df.to_csv("data/carpark_system.csv", encoding='utf-8-sig', index=False)
-
-```
+    ```python
+    # export to csv for further analysis
+    carpark_system_df.to_csv("data/carpark_system.csv", encoding='utf-8-sig', index=False)
+    
+    ```
 
 # 4. Python Visualisation
 
