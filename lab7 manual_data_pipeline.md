@@ -241,7 +241,7 @@ The amount of data might increase as the days goes by, we want to quickly visual
 
 2. <a href="https://thinlab.nus.edu.sg">Launch the VMWAre Horizon Client and create connection to https://thinlab.nus.edu.sg</a> 
 
-3. Launch the virtual machine, click on “Click Here” or “Or Click Here”.
+3. Launch the virtual machine, click on “Virtual Student Desktop”.
 
 4. Login using ```nusstu\<your student id>``` and password
 
