@@ -343,9 +343,9 @@ The amount of data might increase as the days goes by, we want to quickly visual
     updated_carpark_system_df.head()
     
     # export to csv for further analysis
-    updated_carpark_system_df.to_csv("data/carpark_system.csv", encoding='utf-8-sig')
+    updated_carpark_system_df.to_csv("data/carpark_system.csv", encoding='utf-8-sig', index=False)
     # export to your OneDrive too for on-demand refresh (replace your file in OneDrive)
-    updated_carpark_system_df.to_csv("~/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/ee3801/data/carpark_system.csv", encoding='utf-8-sig')
+    updated_carpark_system_df.to_csv("~/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/ee3801/data/carpark_system.csv", encoding='utf-8-sig', index=False)
         
     ```
 
