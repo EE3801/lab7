@@ -25,7 +25,7 @@ We start this practical exercises with a common starting point, reading in data 
 
 3. Right click on the added folder ```ee3801``` and create a new jupyter notebook file "manual_data_pipeline.ipynb".
 
-3. Select Kernel - Python Environment "venv_ee3801".
+3. Select Kernel - Python Environment "venv_ee3801". (For Windows) Select your python interpreter first then kernel "Python: Select Interpreter" > "~/Documents/projects/ee3801/venv_ee3801/Script/python.exe". 
 
 
     ```python
@@ -269,7 +269,7 @@ The amount of data might increase as the days goes by, we want to quickly visual
     <img src="image/week7_image8.png" width="50%">
     <img src="image/week7_image9.png" width="50%">
 
-5. Select Get Data > Web. Paste the link that you have copied in step 2. Remove the question mark (?), parameters and values at the end of the link. Click Ok and Load.
+5. Select Get Data > Web. Paste the link that you have copied in step 2. Remove the question mark (?), parameters and values at the end of the link. Click Ok and Load. Authentication prompt might pop up, select Organisation > Sign in > Connect.
 
     <img src="image/week7_image10.png" width="50%">
     <img src="image/week7_image11.png" width="50%">
