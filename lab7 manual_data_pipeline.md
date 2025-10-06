@@ -273,6 +273,7 @@ The amount of data might increase as the days goes by, we want to quickly visual
 
     <img src="image/week7_image10.png" width="50%">
     <img src="image/week7_image11.png" width="50%">
+    <img src="image/week7_image34.png" width="50%">
     <img src="image/week7_image12.png" width="50%">
 
 6. Select Transform Data.
