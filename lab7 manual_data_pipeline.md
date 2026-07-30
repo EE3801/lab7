@@ -42,7 +42,7 @@ We begin this practical exercise with a common starting point: reading in data a
 \
 For Windows users, 
 - Select Install/Enable suggessted extensions 
-- then select your ```Python interpreter``` first by choosing ```Kernel``` > ```Python: Select Interpreter``` > ```~\AppData\Local\Python\pythoncore-3.14-64\python.exe```. 
+- then select your ```Python interpreter``` first by choosing ```Kernel``` > ```Python: Select Interpreter``` > ```~/Documents/projects/ee3801/venv_ee3801/bin/python``` (For Windows, `~/Documents/projects/ee3801/venv_ee3801/Scripts/python.exe`). 
 - then `Select Kernel` > `Python Environments...` > `venv_ee3801`.
 - Add a new Code cell `+ Code`.
 
@@ -328,6 +328,7 @@ The amount of data may increase over time, so we want to visualise the charts qu
             Plate= fake.license_plate(),
             LocationID="Park"+str(random.randint(0, 5)),
             Entry_DateTime=generate_past_datetime(1).strftime(date_format), # Approximately 1 day ago
+            Exit_DateTime="",
             Parking_Charges=float(0)
         )
     
