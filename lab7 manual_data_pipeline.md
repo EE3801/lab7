@@ -1,6 +1,6 @@
 # Lab 7 Manual Data Pipeline
 
-The instructions below is based on MacOS Tahoe 26.5.2 and MS Windows 11 Education with Python 3.14.6 installed.
+The instructions is based on MacOS Tahoe 26.5.2. Linux/WSL2 and MS Windows 11 Education with Python 3.14.6 installed.
 
 # 1. Scenario
 
@@ -21,7 +21,7 @@ We begin this practical exercise with a common starting point: reading in data a
     # If you do not have python installed, download python3.14.6 from https://www.python.org/downloads/. Then execute the command below to create a Python environment for ee3801.
     python3 -m venv venv_ee3801
 
-    # In MacOS, execute the command below to create a Python environment for ee3801.
+    # In MacOS or Linux/WSL2in , execute the command below to create a Python environment for ee3801.
     source venv_ee3801/bin/activate
     python -V
     python -m pip install ipykernel
