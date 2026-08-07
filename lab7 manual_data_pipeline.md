@@ -1,6 +1,6 @@
 # Lab 7 Manual Data Pipeline
 
-The instructions is based on MacOS Tahoe 26.5.2. Linux/WSL2 and MS Windows 11 Education with Python 3.14.6 installed.
+The instructions is based on MacOS Tahoe 26.5.2., Linux/WSL2 and MS Windows 11 Education with Python 3.14.6 installed.
 
 # 1. Scenario
 
