@@ -29,6 +29,7 @@ We begin this practical exercise with a common starting point: reading in data a
     ```powershell
     # In Windows PowerShell (Run as Administrator), execute the command below to create a Python environment for ee3801.
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+    python3 -m venv venv_ee3801
     .\venv_ee3801\Scripts\Activate.ps1
     python -V
     python -m pip install ipykernel
