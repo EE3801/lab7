@@ -1,6 +1,6 @@
 # Lab 7 Manual Data Pipeline
 
-The instructions is based on MacOS Tahoe 26.5.2., Linux/WSL2 and MS Windows 11 Education with Python 3.14.6 installed.
+The instructions is based on MacOS Tahoe 26.5.2. and MS Windows 11 Education with Python 3.14.6 installed.
 
 # 1. Scenario
 
@@ -11,7 +11,7 @@ We begin this practical exercise with a common starting point: reading in data a
 # 2. Prepare the Python Environment
 
 
-1. Open a terminal or Windows PowerShell (Run as Administrator) or Windows Subsystem for Linux (WSL) and run the following commands to keep all your Python code in a Python environment:
+1. Open a MasOS terminal or Windows PowerShell (Run as Administrator) and run the following commands to keep all your Python code in a Python environment:
 
     ```bash
     mkdir -p ~/Documents/projects/ee3801/data
@@ -21,7 +21,7 @@ We begin this practical exercise with a common starting point: reading in data a
     # If you do not have python installed, download python3.14.6 from https://www.python.org/downloads/. Then execute the command below to create a Python environment for ee3801.
     python3 -m venv venv_ee3801
 
-    # In MacOS or Linux/WSL2in , execute the command below to create a Python environment for ee3801.
+    # In MacOS, execute the command below to create a Python environment for ee3801.
     source venv_ee3801/bin/activate
     python -V
     python -m pip install ipykernel
@@ -42,10 +42,10 @@ We begin this practical exercise with a common starting point: reading in data a
 4. Select ```Kernel``` > ```Python Environments...``` > ```venv_ee3801``` > `+ Code`\
 \
 For Windows users, 
-- Select Install/Enable suggessted extensions 
-- then select your ```Python interpreter``` first by choosing ```Kernel``` > ```Python: Select Interpreter``` > ```~/Documents/projects/ee3801/venv_ee3801/bin/python``` (For Windows, `~/Documents/projects/ee3801/venv_ee3801/Scripts/python.exe`). 
-- then `Select Kernel` > `Python Environments...` > `venv_ee3801`.
-- Add a new Code cell `+ Code`.
+    - Select Install/Enable suggessted extensions 
+    - then select your ```Python interpreter``` first by choosing ```Kernel``` > ```Python: Select Interpreter``` > ```~/Documents/projects/ee3801/venv_ee3801/bin/python``` (For Windows, `~/Documents/projects/ee3801/venv_ee3801/Scripts/python.exe`). 
+    - then `Select Kernel` > `Python Environments...` > `venv_ee3801`.
+    - Add a new Code cell `+ Code`.
 
     ```python
     # Install Python libraries
@@ -363,7 +363,20 @@ The amount of data may increase over time, so we want to visualise the charts qu
     # Export to CSV for further analysis
     updated_carpark_system_df.to_csv("data/carpark_system.csv", encoding='utf-8-sig', index=False)
     # export to your OneDrive too for on-demand refresh (replace your file in OneDrive)
-    updated_carpark_system_df.to_csv("~/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/ee3801/data/carpark_system.csv", encoding='utf-8-sig', index=False)
+    import platform
+
+    current_os = platform.system()
+
+    if current_os == "Windows":
+        print("This local machine is running Windows.")
+        updated_carpark_system_df.to_csv("~/OneDrive-NationalUniversityofSingapore/ee3801/data/carpark_system.csv", encoding='utf-8-sig', index=False)
+    elif current_os == "Darwin":
+        print("This local machine is running macOS.")
+        updated_carpark_system_df.to_csv("~/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/ee3801/data/carpark_system.csv", encoding='utf-8-sig', index=False)
+    else:
+        print(f"Unknown Operating System: {current_os}")
+
+    
         
     ```
 
