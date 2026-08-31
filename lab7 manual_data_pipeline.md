@@ -431,7 +431,7 @@ This is the simplest form of a data pipeline and is often the first step in an o
 - As the data refreshes only when you click on the refresh button, if you have multiple users how do you share this data with them and how do you ensure that they will access up-to-date data?
 - What if your company does not subscribe to Microsoft Power Platform?
 
-# Submissions next Wed 9pm (8 Oct)
+# Submissions next Wed 9pm (7 Oct)
 Submit your 
 - .ipynb file as a PDF (Save your .ipynb file as an HTML file, open it in a browser, and print it as a PDF. )
 - Excel file
