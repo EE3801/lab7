@@ -254,7 +254,7 @@ The amount of data may increase over time, so we want to visualise the charts qu
 
 <b>For Mac users</b>
 
-1. Download the <a href="https://cloud.vmwarehorizon.com">VMware Horizon Client</a>.
+1. Download the <a href="https://customerconnect.omnissa.com/downloads/info/slug/virtual_desktop_and_apps/omnissa_horizon_clients/8">VMware Horizon Client</a>.
 
 2. Your computer will need to be connected to the NUS VPN.
 
@@ -262,7 +262,7 @@ The amount of data may increase over time, so we want to visualise the charts qu
 
 4. Launch the virtual machine and click “Virtual Student Desktop”.
 
-5. Log in using nusstu\<your student id> and your password.
+5. Log in using `nussu\<your student ID>` and your password.
 
 6. In the virtual windows, start MS Power BI.
 
