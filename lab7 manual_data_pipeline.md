@@ -10,7 +10,7 @@ We begin this practical exercise with a common starting point: reading in data a
 
 # 2. Prepare the Python Environment
 
-Note: When copying the codes to your notebook, select all and ```Shift + Tab``` to remove leading spaces.
+Note: When copying the codes to your notebook, select all and ```Shift+Tab``` to remove leading spaces.
 
 1. Open a MasOS terminal or Windows PowerShell (Run as Administrator) and run the following commands to keep all your Python code in a Python environment:
 
