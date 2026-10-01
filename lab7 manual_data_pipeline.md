@@ -141,7 +141,7 @@ For Windows users,
     def createPastCarEntry():
         car = CarPark(
             Plate=fake.license_plate(),
-            LocationID="Park" + str(random.randint(0, 5)),
+            LocationID="Park" + str(random.randint(1, 5)),
             Entry_DateTime=generate_past_datetime(90).strftime(date_format),  # Approximately 3 months ago
             Exit_DateTime="",
             Parking_Charges=float(0)
