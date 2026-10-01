@@ -287,7 +287,7 @@ The amount of data may increase over time, so we want to visualise the charts qu
     <img src="image/week7_image8.png" width="50%">
     <img src="image/week7_image9.png" width="50%">
 
-5. Select Get Data > Web. Paste the link you copied in step 2. Remove the question mark (?), the parameters, and the values at the end of the link. Click OK and then Load. An authentication prompt may appear; select Organisation > Sign in > Connect.
+5. Select Get Data > Web. Paste the link you copied in step 2. Remove the question mark (?), the parameters, and the values at the end of the link. Click OK and then Load. Remove the ```:x:/r/``` in the url. An authentication prompt may appear; select Organisation > Sign in > Connect.
 
     <img src="image/week7_image10.png" width="50%">
     <img src="image/week7_image11.png" width="50%">
