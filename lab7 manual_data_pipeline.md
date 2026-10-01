@@ -328,7 +328,7 @@ The amount of data may increase over time, so we want to visualise the charts qu
     def createNewCarEntry():
         car = CarPark(
             Plate= fake.license_plate(),
-            LocationID="Park"+str(random.randint(0, 5)),
+            LocationID="Park"+str(random.randint(1, 5)),
             Entry_DateTime=generate_past_datetime(1).strftime(date_format), # Approximately 1 day ago
             Exit_DateTime="",
             Parking_Charges=float(0)
