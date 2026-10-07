@@ -263,7 +263,7 @@ The amount of data may increase over time, so we want to visualise the charts qu
 
 4. Launch the virtual machine and click “Virtual Student Desktop”.
 
-5. Log in using `nussu\<your student ID>` and your password.
+5. Log in using `nusstu\<your student ID>` or `nusu\<your student ID>` and your password.
 
 6. In the virtual windows, start MS Power BI.
 
